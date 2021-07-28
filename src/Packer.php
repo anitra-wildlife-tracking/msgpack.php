@@ -255,7 +255,7 @@ class Packer
 
         if ($this->isForceStr) {
             foreach ($map as $key => $val) {
-                $data .= \is_string($key) ? $this->packStr($key) : $this->packInt($key);
+                $data .= $this->packStr((string)$key);
                 $data .= $this->pack($val);
             }
 
